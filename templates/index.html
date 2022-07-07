@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload your Files Here</h1>
+      <p>Upload only png, jpg, jpeg</p>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required />
+        <input type="submit" value="Upload" />
+      </form>
+      {% with messages = get_flashed_messages() %} {% for msg in messages%}
+      <p class="imp_message">{{msg}}</p>
+      {% endfor %} {% endwith %}
+    </div>
+  </body>
+</html>
